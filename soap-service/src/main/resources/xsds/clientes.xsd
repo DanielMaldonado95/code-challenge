@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.codechallange.com/"
+	targetNamespace="http://www.codechallange.com/"
+	elementFormDefault="qualified">
+
+	<xs:element name="guardarClienteRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nombre" type="xs:string" />
+				<xs:element name="identificacion" type="xs:string" />
+				<xs:element name="tipoIdentifiacion" type="xs:int" />
+				<xs:element name="fechaNacimiento" type="xs:date" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="guardarClienteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="estado" type="tns:estado" />
+				<xs:element name="cliente" type="tns:cliente" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="actualizarClienteRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="cliente" type="tns:cliente" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="actualizarClienteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="estado" type="tns:estado" />
+				<xs:element name="cliente" type="tns:cliente" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="eliminarClienteRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCliente" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="eliminarClienteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="estado" type="tns:estado" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="cliente">
+		<xs:sequence>
+			<xs:element name="idCliente" type="xs:long" />
+			<xs:element name="nombre" type="xs:string" />
+			<xs:element name="identificacion" type="xs:string" />
+			<xs:element name="tipoIdentifiacion" type="xs:int" />
+			<xs:element name="fechaNacimiento" type="xs:date" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="estado">
+		<xs:sequence>
+			<xs:element name="estado" type="xs:string" />
+			<xs:element name="mensaje" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema> 
