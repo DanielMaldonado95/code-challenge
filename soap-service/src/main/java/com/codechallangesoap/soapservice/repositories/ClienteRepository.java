@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.codechallangesoap.soapservice.entities.ClienteEntity;
 
 @Repository
-public interface ClienteRepositorio extends JpaRepository<ClienteEntity, Long>{
+public interface ClienteRepository extends JpaRepository<ClienteEntity, Long>{
 
 }

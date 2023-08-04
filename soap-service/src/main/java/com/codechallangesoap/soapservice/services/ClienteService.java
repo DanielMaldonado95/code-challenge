@@ -8,17 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.codechallangesoap.soapservice.entities.ClienteEntity;
-import com.codechallangesoap.soapservice.repositories.ClienteRepositorio;
+import com.codechallangesoap.soapservice.repositories.ClienteRepository;
 
 @Service
 public class ClienteService {
 	@Autowired
-	private ClienteRepositorio clienteRepositorio;
+	private ClienteRepository clienteRepository;
 
 	public Map<String, Object> buscar(long id) {
 		Map<String, Object> resp = new HashMap<String, Object>();
 		try {
-			Optional<ClienteEntity> clienteTemp = clienteRepositorio.findById(id);
+			Optional<ClienteEntity> clienteTemp = clienteRepository.findById(id);
 			if (clienteTemp.isPresent())
 				resp.put("data", clienteTemp.get());
 			else
@@ -33,7 +33,7 @@ public class ClienteService {
 	public Map<String, Object> guardar(ClienteEntity clienteEntity) {
 		Map<String, Object> resp = new HashMap<String, Object>();
 		try {
-			ClienteEntity clienteTemp = clienteRepositorio.save(clienteEntity);
+			ClienteEntity clienteTemp = clienteRepository.save(clienteEntity);
 			if (clienteTemp != null)
 				resp.put("data", clienteTemp);
 		} catch (Exception e) {
@@ -47,7 +47,7 @@ public class ClienteService {
 		Map<String, Object> resp = new HashMap<String, Object>();
 		try {
 			if(buscar(id).containsKey("data")) {				
-				clienteRepositorio.deleteById(id);
+				clienteRepository.deleteById(id);
 				resp.put("data", "El registro fue eliminado de forma exitosa");
 			} else {
 				resp.put("info", "El registro no fue encontrado");
