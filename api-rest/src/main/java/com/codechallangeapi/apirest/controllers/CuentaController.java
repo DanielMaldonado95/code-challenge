@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codechallangeapi.apirest.configurations.SoapClient;
@@ -40,8 +41,9 @@ public class CuentaController {
 	private SoapClient soapClient;
 
 	@GetMapping(path = "/cuentas")
-	public Map<String, Object> obtenerCuentas() {
-		return cuentaSerivce.obtener();
+	public Map<String, Object> obtenerCuentas(@RequestParam(name = "page", required = false) Integer page,
+			@RequestParam(name = "size", required = false) Integer size) {
+		return cuentaSerivce.obtener(page == null ? 0 : page, size == null ? 0 : size);
 	}
 
 	@GetMapping(path = "/cuenta/{id}")

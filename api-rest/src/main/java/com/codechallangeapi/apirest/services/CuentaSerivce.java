@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.codechallangeapi.apirest.entities.CuentaEntity;
@@ -15,10 +16,15 @@ public class CuentaSerivce {
 	@Autowired
 	private CuentaRepository cuentaRepository;
 
-	public Map<String, Object> obtener() {
+	public Map<String, Object> obtener(int page, int size) {
 		Map<String, Object> resp = new HashMap<String, Object>();
 		try {
-			resp.put("data", cuentaRepository.findAll());
+			if (page == 0 && size == 0) {
+				resp.put("data", cuentaRepository.findAll());
+			} else {
+				PageRequest pageRequest = PageRequest.of(page, size);
+				resp.put("data", cuentaRepository.findAll(pageRequest));
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			resp.put("error", e.getMessage());
