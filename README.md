@@ -1,4 +1,4 @@
-# code-challenge
+# Code challenge
 
 # Es necesario correr los dos proyectos de java para su correcto funcionamiento mencionando que el proyecto SOAP utiliza el puerto 8085 y el proyecto REST utiliza el puerto 8080 y ambos utilizan Maven.
 
