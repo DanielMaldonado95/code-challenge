@@ -24,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="idCliente" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="numeroCuenta" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,27 +35,27 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "idCliente"
+    "numeroCuenta"
 })
-@XmlRootElement(name = "eliminarClienteRequest")
-public class EliminarClienteRequest {
+@XmlRootElement(name = "eliminarCuentaRequest")
+public class EliminarCuentaRequest {
 
-    protected long idCliente;
+    protected long numeroCuenta;
 
     /**
-     * Gets the value of the idCliente property.
+     * Gets the value of the numeroCuenta property.
      * 
      */
-    public long getIdCliente() {
-        return idCliente;
+    public long getNumeroCuenta() {
+        return numeroCuenta;
     }
 
     /**
-     * Sets the value of the idCliente property.
+     * Sets the value of the numeroCuenta property.
      * 
      */
-    public void setIdCliente(long value) {
-        this.idCliente = value;
+    public void setNumeroCuenta(long value) {
+        this.numeroCuenta = value;
     }
 
 }

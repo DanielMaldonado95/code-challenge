@@ -25,7 +25,9 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="estado" type="{http://www.codechallange.com/}estado"/&gt;
+ *         &lt;element name="numeroCuenta" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="estadoCuenta" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="saldo" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *         &lt;element name="cliente" type="{http://www.codechallange.com/}cliente"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -37,39 +39,66 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "estado",
+    "numeroCuenta",
+    "estadoCuenta",
+    "saldo",
     "cliente"
 })
-@XmlRootElement(name = "actualizarClienteResponse")
-public class ActualizarClienteResponse {
+@XmlRootElement(name = "guardarCuentaRequest")
+public class GuardarCuentaRequest {
 
-    @XmlElement(required = true)
-    protected Estado estado;
+    protected long numeroCuenta;
+    protected boolean estadoCuenta;
+    protected double saldo;
     @XmlElement(required = true)
     protected Cliente cliente;
 
     /**
-     * Gets the value of the estado property.
+     * Gets the value of the numeroCuenta property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Estado }
-     *     
      */
-    public Estado getEstado() {
-        return estado;
+    public long getNumeroCuenta() {
+        return numeroCuenta;
     }
 
     /**
-     * Sets the value of the estado property.
+     * Sets the value of the numeroCuenta property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Estado }
-     *     
      */
-    public void setEstado(Estado value) {
-        this.estado = value;
+    public void setNumeroCuenta(long value) {
+        this.numeroCuenta = value;
+    }
+
+    /**
+     * Gets the value of the estadoCuenta property.
+     * 
+     */
+    public boolean isEstadoCuenta() {
+        return estadoCuenta;
+    }
+
+    /**
+     * Sets the value of the estadoCuenta property.
+     * 
+     */
+    public void setEstadoCuenta(boolean value) {
+        this.estadoCuenta = value;
+    }
+
+    /**
+     * Gets the value of the saldo property.
+     * 
+     */
+    public double getSaldo() {
+        return saldo;
+    }
+
+    /**
+     * Sets the value of the saldo property.
+     * 
+     */
+    public void setSaldo(double value) {
+        this.saldo = value;
     }
 
     /**

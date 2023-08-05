@@ -25,27 +25,39 @@ public interface ClientesPort {
 
     /**
      * 
-     * @param actualizarClienteRequest
+     * @param guardarCuentaRequest
      * @return
-     *     returns com.codechallangesoap.soapservice.soap.ActualizarClienteResponse
+     *     returns com.codechallangesoap.soapservice.soap.GuardarCuentaResponse
      */
     @WebMethod
-    @WebResult(name = "actualizarClienteResponse", targetNamespace = "http://www.codechallange.com/", partName = "actualizarClienteResponse")
-    public ActualizarClienteResponse actualizarCliente(
-        @WebParam(name = "actualizarClienteRequest", targetNamespace = "http://www.codechallange.com/", partName = "actualizarClienteRequest")
-        ActualizarClienteRequest actualizarClienteRequest);
+    @WebResult(name = "guardarCuentaResponse", targetNamespace = "http://www.codechallange.com/", partName = "guardarCuentaResponse")
+    public GuardarCuentaResponse guardarCuenta(
+        @WebParam(name = "guardarCuentaRequest", targetNamespace = "http://www.codechallange.com/", partName = "guardarCuentaRequest")
+        GuardarCuentaRequest guardarCuentaRequest);
 
     /**
      * 
-     * @param eliminarClienteRequest
+     * @param eliminarCuentaRequest
      * @return
-     *     returns com.codechallangesoap.soapservice.soap.EliminarClienteResponse
+     *     returns com.codechallangesoap.soapservice.soap.EliminarCuentaResponse
      */
     @WebMethod
-    @WebResult(name = "eliminarClienteResponse", targetNamespace = "http://www.codechallange.com/", partName = "eliminarClienteResponse")
-    public EliminarClienteResponse eliminarCliente(
-        @WebParam(name = "eliminarClienteRequest", targetNamespace = "http://www.codechallange.com/", partName = "eliminarClienteRequest")
-        EliminarClienteRequest eliminarClienteRequest);
+    @WebResult(name = "eliminarCuentaResponse", targetNamespace = "http://www.codechallange.com/", partName = "eliminarCuentaResponse")
+    public EliminarCuentaResponse eliminarCuenta(
+        @WebParam(name = "eliminarCuentaRequest", targetNamespace = "http://www.codechallange.com/", partName = "eliminarCuentaRequest")
+        EliminarCuentaRequest eliminarCuentaRequest);
+
+    /**
+     * 
+     * @param guardarMovimientoRequest
+     * @return
+     *     returns com.codechallangesoap.soapservice.soap.GuardarMovimientoResponse
+     */
+    @WebMethod
+    @WebResult(name = "guardarMovimientoResponse", targetNamespace = "http://www.codechallange.com/", partName = "guardarMovimientoResponse")
+    public GuardarMovimientoResponse guardarMovimiento(
+        @WebParam(name = "guardarMovimientoRequest", targetNamespace = "http://www.codechallange.com/", partName = "guardarMovimientoRequest")
+        GuardarMovimientoRequest guardarMovimientoRequest);
 
     /**
      * 
@@ -58,5 +70,41 @@ public interface ClientesPort {
     public GuardarClienteResponse guardarCliente(
         @WebParam(name = "guardarClienteRequest", targetNamespace = "http://www.codechallange.com/", partName = "guardarClienteRequest")
         GuardarClienteRequest guardarClienteRequest);
+
+    /**
+     * 
+     * @param actualizarClienteRequest
+     * @return
+     *     returns com.codechallangesoap.soapservice.soap.ActualizarClienteResponse
+     */
+    @WebMethod
+    @WebResult(name = "actualizarClienteResponse", targetNamespace = "http://www.codechallange.com/", partName = "actualizarClienteResponse")
+    public ActualizarClienteResponse actualizarCliente(
+        @WebParam(name = "actualizarClienteRequest", targetNamespace = "http://www.codechallange.com/", partName = "actualizarClienteRequest")
+        ActualizarClienteRequest actualizarClienteRequest);
+
+    /**
+     * 
+     * @param actualizarCuentaRequest
+     * @return
+     *     returns com.codechallangesoap.soapservice.soap.ActualizarCuentaResponse
+     */
+    @WebMethod
+    @WebResult(name = "actualizarCuentaResponse", targetNamespace = "http://www.codechallange.com/", partName = "actualizarCuentaResponse")
+    public ActualizarCuentaResponse actualizarCuenta(
+        @WebParam(name = "actualizarCuentaRequest", targetNamespace = "http://www.codechallange.com/", partName = "actualizarCuentaRequest")
+        ActualizarCuentaRequest actualizarCuentaRequest);
+
+    /**
+     * 
+     * @param eliminarClienteRequest
+     * @return
+     *     returns com.codechallangesoap.soapservice.soap.EliminarClienteResponse
+     */
+    @WebMethod
+    @WebResult(name = "eliminarClienteResponse", targetNamespace = "http://www.codechallange.com/", partName = "eliminarClienteResponse")
+    public EliminarClienteResponse eliminarCliente(
+        @WebParam(name = "eliminarClienteRequest", targetNamespace = "http://www.codechallange.com/", partName = "eliminarClienteRequest")
+        EliminarClienteRequest eliminarClienteRequest);
 
 }

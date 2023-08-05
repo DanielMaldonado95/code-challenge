@@ -22,7 +22,7 @@ public class ClienteEntity {
 	@Column(name = "identificacion")
 	private String identificacion;
 	@Column(name = "tipo_identificacion")
-	private int tipoIdentifiacion;
+	private String tipoIdentifiacion;
 	@Column(name = "fecha_nacimiento")
 	private LocalDate fechaNacimiento;
 
@@ -30,7 +30,7 @@ public class ClienteEntity {
 		super();
 	}
 
-	public ClienteEntity(String nombre, String identificacion, int tipoIdentifiacion, LocalDate fechaNacimiento) {
+	public ClienteEntity(String nombre, String identificacion, String tipoIdentifiacion, LocalDate fechaNacimiento) {
 		super();
 		this.nombre = nombre;
 		this.identificacion = identificacion;
@@ -38,7 +38,7 @@ public class ClienteEntity {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public ClienteEntity(long idCliente, String nombre, String identificacion, int tipoIdentifiacion,
+	public ClienteEntity(long idCliente, String nombre, String identificacion, String tipoIdentifiacion,
 			LocalDate fechaNacimiento) {
 		super();
 		this.idCliente = idCliente;
@@ -72,11 +72,11 @@ public class ClienteEntity {
 		this.identificacion = identificacion;
 	}
 
-	public int getTipoIdentifiacion() {
+	public String getTipoIdentifiacion() {
 		return tipoIdentifiacion;
 	}
 
-	public void setTipoIdentifiacion(int tipoIdentifiacion) {
+	public void setTipoIdentifiacion(String tipoIdentifiacion) {
 		this.tipoIdentifiacion = tipoIdentifiacion;
 	}
 

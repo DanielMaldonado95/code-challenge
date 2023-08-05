@@ -22,7 +22,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *       <sequence>
  *         <element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         <element name="identificacion" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="tipoIdentifiacion" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="tipoIdentifiacion" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         <element name="fechaNacimiento" type="{http://www.w3.org/2001/XMLSchema}date"/>
  *       </sequence>
  *     </restriction>
@@ -46,7 +46,8 @@ public class GuardarClienteRequest {
     protected String nombre;
     @XmlElement(required = true)
     protected String identificacion;
-    protected int tipoIdentifiacion;
+    @XmlElement(required = true)
+    protected String tipoIdentifiacion;
     @XmlElement(required = true)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar fechaNacimiento;
@@ -102,16 +103,24 @@ public class GuardarClienteRequest {
     /**
      * Gets the value of the tipoIdentifiacion property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getTipoIdentifiacion() {
+    public String getTipoIdentifiacion() {
         return tipoIdentifiacion;
     }
 
     /**
      * Sets the value of the tipoIdentifiacion property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setTipoIdentifiacion(int value) {
+    public void setTipoIdentifiacion(String value) {
         this.tipoIdentifiacion = value;
     }
 

@@ -109,4 +109,104 @@ public class ObjectFactory {
         return new EliminarClienteResponse();
     }
 
+    /**
+     * Create an instance of {@link GuardarCuentaRequest }
+     * 
+     * @return
+     *     the new instance of {@link GuardarCuentaRequest }
+     */
+    public GuardarCuentaRequest createGuardarCuentaRequest() {
+        return new GuardarCuentaRequest();
+    }
+
+    /**
+     * Create an instance of {@link GuardarCuentaResponse }
+     * 
+     * @return
+     *     the new instance of {@link GuardarCuentaResponse }
+     */
+    public GuardarCuentaResponse createGuardarCuentaResponse() {
+        return new GuardarCuentaResponse();
+    }
+
+    /**
+     * Create an instance of {@link Cuenta }
+     * 
+     * @return
+     *     the new instance of {@link Cuenta }
+     */
+    public Cuenta createCuenta() {
+        return new Cuenta();
+    }
+
+    /**
+     * Create an instance of {@link ActualizarCuentaRequest }
+     * 
+     * @return
+     *     the new instance of {@link ActualizarCuentaRequest }
+     */
+    public ActualizarCuentaRequest createActualizarCuentaRequest() {
+        return new ActualizarCuentaRequest();
+    }
+
+    /**
+     * Create an instance of {@link ActualizarCuentaResponse }
+     * 
+     * @return
+     *     the new instance of {@link ActualizarCuentaResponse }
+     */
+    public ActualizarCuentaResponse createActualizarCuentaResponse() {
+        return new ActualizarCuentaResponse();
+    }
+
+    /**
+     * Create an instance of {@link EliminarCuentaRequest }
+     * 
+     * @return
+     *     the new instance of {@link EliminarCuentaRequest }
+     */
+    public EliminarCuentaRequest createEliminarCuentaRequest() {
+        return new EliminarCuentaRequest();
+    }
+
+    /**
+     * Create an instance of {@link EliminarCuentaResponse }
+     * 
+     * @return
+     *     the new instance of {@link EliminarCuentaResponse }
+     */
+    public EliminarCuentaResponse createEliminarCuentaResponse() {
+        return new EliminarCuentaResponse();
+    }
+
+    /**
+     * Create an instance of {@link GuardarMovimientoRequest }
+     * 
+     * @return
+     *     the new instance of {@link GuardarMovimientoRequest }
+     */
+    public GuardarMovimientoRequest createGuardarMovimientoRequest() {
+        return new GuardarMovimientoRequest();
+    }
+
+    /**
+     * Create an instance of {@link Movimiento }
+     * 
+     * @return
+     *     the new instance of {@link Movimiento }
+     */
+    public Movimiento createMovimiento() {
+        return new Movimiento();
+    }
+
+    /**
+     * Create an instance of {@link GuardarMovimientoResponse }
+     * 
+     * @return
+     *     the new instance of {@link GuardarMovimientoResponse }
+     */
+    public GuardarMovimientoResponse createGuardarMovimientoResponse() {
+        return new GuardarMovimientoResponse();
+    }
+
 }

@@ -25,8 +25,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="estado" type="{http://www.codechallange.com/}estado"/&gt;
- *         &lt;element name="cliente" type="{http://www.codechallange.com/}cliente"/&gt;
+ *         &lt;element name="movimiento" type="{http://www.codechallange.com/}movimiento"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,63 +36,36 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "estado",
-    "cliente"
+    "movimiento"
 })
-@XmlRootElement(name = "actualizarClienteResponse")
-public class ActualizarClienteResponse {
+@XmlRootElement(name = "guardarMovimientoRequest")
+public class GuardarMovimientoRequest {
 
     @XmlElement(required = true)
-    protected Estado estado;
-    @XmlElement(required = true)
-    protected Cliente cliente;
+    protected Movimiento movimiento;
 
     /**
-     * Gets the value of the estado property.
+     * Gets the value of the movimiento property.
      * 
      * @return
      *     possible object is
-     *     {@link Estado }
+     *     {@link Movimiento }
      *     
      */
-    public Estado getEstado() {
-        return estado;
+    public Movimiento getMovimiento() {
+        return movimiento;
     }
 
     /**
-     * Sets the value of the estado property.
+     * Sets the value of the movimiento property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Estado }
+     *     {@link Movimiento }
      *     
      */
-    public void setEstado(Estado value) {
-        this.estado = value;
-    }
-
-    /**
-     * Gets the value of the cliente property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Cliente }
-     *     
-     */
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    /**
-     * Sets the value of the cliente property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Cliente }
-     *     
-     */
-    public void setCliente(Cliente value) {
-        this.cliente = value;
+    public void setMovimiento(Movimiento value) {
+        this.movimiento = value;
     }
 
 }

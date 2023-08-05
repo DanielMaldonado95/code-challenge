@@ -9,7 +9,7 @@
 			<xs:sequence>
 				<xs:element name="nombre" type="xs:string" />
 				<xs:element name="identificacion" type="xs:string" />
-				<xs:element name="tipoIdentifiacion" type="xs:int" />
+				<xs:element name="tipoIdentifiacion" type="xs:string" />
 				<xs:element name="fechaNacimiento" type="xs:date" />
 			</xs:sequence>
 		</xs:complexType>
@@ -57,13 +57,106 @@
 		</xs:complexType>
 	</xs:element>
 
+	<xs:element name="guardarCuentaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="numeroCuenta" type="xs:long" />
+				<xs:element name="estadoCuenta" type="xs:boolean" />
+				<xs:element name="saldo" type="xs:double" />
+				<xs:element name="cliente" type="tns:cliente" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="guardarCuentaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="cuenta" type="tns:cuenta" />
+				<xs:element name="estado" type="tns:estado" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="actualizarCuentaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="numeroCuenta" type="xs:long" />
+				<xs:element name="estadoCuenta" type="xs:boolean" />
+				<xs:element name="saldo" type="xs:double" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="actualizarCuentaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="cuenta" type="tns:cuenta" />
+				<xs:element name="estado" type="tns:estado" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="eliminarCuentaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="numeroCuenta" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="eliminarCuentaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="estado" type="tns:estado" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="guardarMovimientoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="movimiento" type="tns:movimiento" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="guardarMovimientoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="estado" type="tns:estado" />
+				<xs:element name="movimiento" type="tns:movimiento" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
 	<xs:complexType name="cliente">
 		<xs:sequence>
 			<xs:element name="idCliente" type="xs:long" />
 			<xs:element name="nombre" type="xs:string" />
 			<xs:element name="identificacion" type="xs:string" />
-			<xs:element name="tipoIdentifiacion" type="xs:int" />
+			<xs:element name="tipoIdentifiacion" type="xs:string" />
 			<xs:element name="fechaNacimiento" type="xs:date" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="cuenta">
+		<xs:sequence>
+			<xs:element name="numeroCuenta" type="xs:long" />
+			<xs:element name="fechaApartura" type="xs:date" />
+			<xs:element name="horaApertura" type="xs:time" />
+			<xs:element name="estadoCuenta" type="xs:boolean" />
+			<xs:element name="saldo" type="xs:double" />
+			<xs:element name="cliente" type="tns:cliente" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="movimiento">
+		<xs:sequence>
+			<xs:element name="numeroReferencia" type="xs:long" />
+			<xs:element name="cuentaOrigen" type="xs:long" />
+			<xs:element name="cuentaDestino" type="xs:long" />
+			<xs:element name="tipoMovimiento" type="xs:string" />
+			<xs:element name="monto" type="xs:double" />
 		</xs:sequence>
 	</xs:complexType>
 
