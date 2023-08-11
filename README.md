@@ -4,6 +4,6 @@
 
 # Versión de Java: 17.
 
-# Versión MySql: 8.1.
+# Versión de MySql: 8.1.
 
 # El dump de la base de datos fue creado con el programa DBeaver 23.1.3.
